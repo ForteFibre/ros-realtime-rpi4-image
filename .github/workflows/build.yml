@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jammy-ros2
-          path: "*.gz"
+          path: "out/*.gz"
 
   build-noble:
     needs: changes
@@ -60,4 +60,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: noble-ros2
-          path: "*.gz"
+          path: "out/*.gz"
