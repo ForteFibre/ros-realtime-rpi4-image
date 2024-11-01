@@ -294,6 +294,10 @@ class Builder(object):
             device_name = f"{loop_device}p{i}"
             mount_point = os.path.join(self.chroot_path, mount_point.lstrip("/"))
 
+            if not os.path.isdir(mount_point):
+                os.makedirs(mount_point)
+                self.logger.info(f"created mount point {mount_point}")
+
             self._run_script_on_host(["mount", device_name, mount_point])
 
         self.logger.info("copy resolv.conf and qemu-user-static")
