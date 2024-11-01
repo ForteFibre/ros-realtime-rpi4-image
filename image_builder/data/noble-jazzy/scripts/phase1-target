@@ -3,6 +3,7 @@
 # Setup ROS distro and ROS
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 apt-get update
+apt-get install -f -y
 apt-get install -y build-essential \
     cmake \
     gh \
